@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ryokan/ui": ["apps/ui/src/index.ts"],
+      "@ryokan/ui/server": ["apps/ui/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

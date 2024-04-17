@@ -1,0 +1,8 @@
+{
+  "name": "iris-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/iris-e2e/src",
+  "implicitDependencies": ["iris"],
+  "// targets": "to see all targets run: nx show project iris-e2e --web",
+  "targets": {}
+}

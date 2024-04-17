@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'condor',
+  // displayName: 'condor',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
