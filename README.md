@@ -1,11 +1,10 @@
-# Ryokan
+# 🎲⚡❓👑Ryokan
 
 Online gaming platform monorepo
 
-
 ## Applications
 
-### condor 
+### condor
 
 API for client connections. Handles public API calls and WebSocket connections
 
@@ -16,4 +15,3 @@ Main frontend for all activities
 ### ui
 
 Library for React components. Has built-in storybook
-
