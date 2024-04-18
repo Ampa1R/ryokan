@@ -22,6 +22,7 @@
     "@nestjs/config": "^3.2.2",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
+    "@nestjs/typeorm": "^10.0.2",
     "@nx/devkit": "18.3.1",
     "@nx/eslint": "18.3.1",
     "@nx/eslint-plugin": "18.3.1",
@@ -71,10 +72,12 @@
     "jest-environment-node": "^29.4.1",
     "joi": "^17.12.3",
     "nx": "18.3.1",
+    "pg": "^8.11.5",
     "prettier": "^2.6.2",
     "storybook": "7.6.17",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
+    "typeorm": "^0.3.20",
     "typescript": "~5.4.2",
     "webpack-cli": "^5.1.4"
   }
