@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": false,
+  "tailwind": {
+    "config": "apps/ui/tailwind.config.js",
+    "css": "apps/ui/src/global.css",
+    "baseColor": "stone",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "apps/ui/src/lib/",
+    "utils": "@ryokan/ui"
+  }
+}
