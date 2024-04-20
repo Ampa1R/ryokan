@@ -5,7 +5,7 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "serve": {
+    "dev": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
@@ -19,6 +19,9 @@
           "buildTarget": "condor:build:production"
         }
       }
+    },
+    "typeorm": {
+      "command": "npx typeorm-ts-node-commonjs migration:generate foo -d ./apps/condor/src/config/db.config.ts "
     }
   }
 }

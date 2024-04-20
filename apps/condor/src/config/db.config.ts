@@ -1,6 +1,9 @@
-import { IsBoolean, IsNumber, IsString, Max, Min } from 'class-validator';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
+import { IsBoolean, IsNumber, IsString, Max, Min } from 'class-validator';
 import { Config } from "./base";
+
 
 export class DBConfig {
   @IsNumber()
@@ -27,7 +30,7 @@ export class DBConfig {
   logging: boolean;
 }
 
-const factory = () => ({
+const factory = (): PostgresConnectionOptions => ({
   port: parseInt(process.env.DB_PORT, 10),
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
@@ -35,9 +38,11 @@ const factory = () => ({
   database: process.env.DB_NAME,
   synchronize: Boolean(process.env.DB_SYNCHRONIZE) || false,
   logging: Boolean(process.env.DB_LOGGING) || true,
-
+  migrationsRun: false,
+  namingStrategy: new SnakeNamingStrategy(),
+  entities: ['dist/**/entities/**/*{.js,.ts}'],
+  migrations: ['dist/database/migrations/**/*{.js,.ts}'],
   type: 'postgres',
-  autoLoadEntities: true,
 });
 
 
