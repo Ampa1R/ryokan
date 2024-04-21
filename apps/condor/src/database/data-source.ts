@@ -4,4 +4,5 @@ import { DataSource } from 'typeorm';
 import dbConfig from '../config/db.config';
 
 dotenv.config();
+
 export default new DataSource(dbConfig.factory());

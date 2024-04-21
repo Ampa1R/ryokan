@@ -20,8 +20,61 @@
         }
       }
     },
-    "typeorm": {
-      "command": "npx typeorm-ts-node-commonjs migration:generate foo -d ./apps/condor/src/config/db.config.ts "
+    "build-migrations": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "cwd": "apps/condor",
+        "commands": [
+          "rm -rf dist",
+          "npx tsc --project tsconfig.migrations.json"
+        ]
+      }
+    },
+    "type-orm": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "cwd": "apps/condor",
+        "commands": ["npx typeorm -d dist/database/data-source.js"]
+      },
+      "dependsOn": ["build-migrations"]
+    },
+    "migration:generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/condor",
+        "commands": [
+          "nx run condor:type-orm migration:generate src/database/migrations/{args.name} --pretty"
+        ]
+      }
+    },
+    "migration:run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/condor",
+        "commands": ["nx run condor:type-orm migration:run"]
+      }
+    },
+    "migration:revert": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/condor",
+        "commands": ["nx run condor:type-orm migration:revert"]
+      }
+    },
+    "migration:create": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/condor",
+        "commands": [
+          {
+            "command": "npx typeorm migration:create src/database/migrations/{args.name}",
+            "color": "blue",
+            "bgColor": "bgBlue"
+          }
+        ]
+      }
     }
   }
 }

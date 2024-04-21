@@ -40,8 +40,8 @@ const factory = (): PostgresConnectionOptions => ({
   logging: Boolean(process.env.DB_LOGGING) || true,
   migrationsRun: false,
   namingStrategy: new SnakeNamingStrategy(),
-  entities: ['dist/**/entities/**/*{.js,.ts}'],
-  migrations: ['dist/database/migrations/**/*{.js,.ts}'],
+  entities: ['dist/**/*.entity{.js,.ts}'],
+  migrations: ['dist/database/migrations/*{.js,.ts}'],
   type: 'postgres',
 });
 
