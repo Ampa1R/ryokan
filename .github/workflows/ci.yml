@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  main:
+  master:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,8 +30,8 @@ jobs:
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
-      - run: git branch --track main origin/main
+      - run: git branch --track master origin/master
         if: ${{ github.event_name == 'pull_request' }}
 
-      - run: npx nx-cloud record -- nx format:check
-      - run: npx nx affected -t lint test build
+      - run: npx nx-cloud record -- nx format:check --base=master
+      - run: npx nx affected --base=master -t lint test build

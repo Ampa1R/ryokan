@@ -19,9 +19,10 @@
     "react-dom": "18.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
+    "tslib": "^2.3.0",
+    "typeorm-naming-strategies": "^4.1.0",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
-    "tslib": "^2.3.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@nestjs/config": "^3.2.2",
@@ -90,7 +91,7 @@
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.4.3",
     "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
+    "ts-node": "^10.9.1",
     "typeorm": "^0.3.20",
     "typescript": "~5.4.2",
     "vite": "~5.0.0",
