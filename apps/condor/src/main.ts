@@ -13,6 +13,8 @@ async function bootstrap() {
     defaultVersion: '1',
   });
 
+  app.enableCors();
+
   const configService = app.get(ConfigService);
   const host = configService.get('app.host');
   const port = configService.get('app.port');

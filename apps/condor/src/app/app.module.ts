@@ -9,6 +9,7 @@ import { UsersModule } from '../domains/users/users.module';
 import { DatabaseModule } from '../database/database.module';
 import { HealthController } from './health.controller';
 import { PusherConfig } from '../config/pusher.config';
+import { PaintModule } from 'src/paint/paint.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { PusherConfig } from '../config/pusher.config';
       inject: [ConfigService],
     }),
     UsersModule,
+    PaintModule,
   ],
   controllers: [AppController, HealthController],
   providers: [AppService],
