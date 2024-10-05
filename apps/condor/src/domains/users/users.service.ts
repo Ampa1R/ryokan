@@ -8,7 +8,7 @@ export class UsersService {
   constructor(
     @InjectRepository(Users)
     private usersRepository: Repository<Users>,
-  ) { }
+  ) {}
 
   findAll(): Promise<Users[]> {
     return this.usersRepository.find();

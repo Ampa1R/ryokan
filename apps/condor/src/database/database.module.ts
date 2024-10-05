@@ -15,4 +15,4 @@ import { DatabaseQueryLogger } from './query.logger';
   ],
   providers: [],
 })
-export class DatabaseModule { }
+export class DatabaseModule {}

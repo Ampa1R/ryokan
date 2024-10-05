@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import config from '../config';
 import { UsersModule } from '../domains/users/users.module';
 import { DatabaseModule } from '../database/database.module';
+import { HealthController } from './health.controller';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { DatabaseModule } from '../database/database.module';
     DatabaseModule,
     UsersModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
