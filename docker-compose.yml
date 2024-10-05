@@ -5,7 +5,7 @@ services:
   db:
     image: postgres:16.2
     ports:
-      - 5432:5432
+      - 5436:5432
     environment:
       POSTGRES_DB: condor
       POSTGRES_USER: condor

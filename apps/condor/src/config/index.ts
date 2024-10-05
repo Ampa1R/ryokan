@@ -5,11 +5,12 @@ import { registerAs } from '@nestjs/config';
 
 import appConfig from './app.config';
 import dbConfig from './db.config';
+import pusherConfig from './pusher.config';
 import { Config } from './base';
 
 const logger = new Logger('Config');
 
-const configurations: Config[] = [appConfig, dbConfig];
+const configurations: Config[] = [appConfig, dbConfig, pusherConfig];
 
 const validate = <T extends object, V>(
   schema: ClassConstructor<T>,

@@ -1,15 +1,10 @@
-// nestjs controller with health check postgresql
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
 import { Client } from 'pg';
 
 @Controller('health')
 export class HealthController {
-  constructor(
-    private readonly appService: AppService,
-    private readonly configService: ConfigService,
-  ) {}
+  constructor(private readonly configService: ConfigService) {}
 
   @Get()
   async getData() {
@@ -26,7 +21,7 @@ export class HealthController {
     } catch {
       return { status: 'error' };
     } finally {
-      client.end();
+      await client.end();
     }
   }
 }
