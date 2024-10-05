@@ -1,6 +1,6 @@
-import { IsEnum, IsNumber, Max, Min } from 'class-validator';
+import { IsEnum, IsNumber, IsString, Max, Min } from 'class-validator';
 
-import { Config } from "./base";
+import { Config } from './base';
 
 export enum AppEnv {
   Development = 'development',
@@ -10,6 +10,9 @@ export enum AppEnv {
 }
 
 export class AppConfig {
+  @IsString()
+  host: string;
+
   @IsNumber()
   @Min(0)
   @Max(65535)
@@ -20,10 +23,10 @@ export class AppConfig {
 }
 
 const factory = () => ({
-  port: parseInt(process.env.APP_PORT, 10) || 4000,
+  host: process.env.APP_HOST || '0.0.0.0',
+  port: parseInt(process.env.APP_PORT!, 10) || 4000,
   env: process.env.NODE_ENV || 'production',
 });
-
 
 export default {
   name: 'app',
