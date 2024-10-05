@@ -12,16 +12,16 @@ Working with migrations:
 
 ```shell
 # create empty
-nx run condor:migration:create --name=create_players
+pnpm migration:create src/database/migrations/CreateUserTable
 
 # generate from entities
-nx run condor:migration:generate --name=add_deleted_at_to_games
+pnpm migration:generate src/database/migrations/AddEmailToUser
 
 # apply all pending to db
-nx run condor:migration:run
+pnpm migration:run
 
 # revert the last one
-nx run condor:migration:revert
+pnpm migration:revert
 ```
 
 ### iris
